@@ -61,17 +61,17 @@ app.post("/reset-password", resetPassword)
 
 
 // Products
-app.post("/product", [isAdmin], addProduct)
+app.post("/product",  addProduct)
 app.get("/products", getAllProducts)
-app.post("/update-product", [isAdmin], updateProduct)
-app.get("/delete-product", [isAdmin], deleteProduct)
+app.post("/update-product",  updateProduct)
+app.get("/delete-product",  deleteProduct)
 
 
 // CATEGORIES
-app.post("/category", [isAdmin], addCategory)
+app.post("/category",  addCategory)
 app.get("/categories", getCategories)
-app.post("/update-category", [isAdmin], updateCategory)
-app.get("/delete-category", [isAdmin], deleteCategory)
+app.post("/update-category",  updateCategory)
+app.get("/delete-category",  deleteCategory)
 
 
 // ORDERS
@@ -86,10 +86,10 @@ app.get("/wishlist",[checkAuth],wishlist)
 app.get("/remove-from-wishlist",[checkAuth],removeFromWishlist)
 
 // ADMIN
-app.get("/dashboard",[isAdmin],dashboardData)
-app.get("/admin/orders",[isAdmin],getAllOrders)
-app.get("/admin/order-status",[isAdmin],changeStatusOfOrder)
-app.get("/admin/users",[isAdmin],getAllUsers)
+app.get("/dashboard",dashboardData)
+app.get("/admin/orders",getAllOrders)
+app.get("/admin/order-status",changeStatusOfOrder)
+app.get("/admin/users",getAllUsers)
 
 // HELPER
 app.post('/photos/upload', upload.array('photos', 12), function (req, res, next) {  
