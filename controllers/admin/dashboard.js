@@ -35,8 +35,7 @@ module.exports.getAllUsers = async (req, res) => {
     try{
 
         // all users
-        const users = await userModel.find()
-            .select("-password -token")
+        const users = await userModel.find();
 
         return res.json({
             success : true,
